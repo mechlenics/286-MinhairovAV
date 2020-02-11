@@ -37,7 +37,7 @@
     echo "Задача 7: ";
     var_dump($arr1);
 
-    $str = "Вережков Андрей Вячеславович";
+    $str = "Бережков Андрей Вячеславович";
 	$stre = explode(" ", $str);
 	$subs = substr($stre[1], 0, 2);
 	$subr = substr($stre[2], 0, 2);
