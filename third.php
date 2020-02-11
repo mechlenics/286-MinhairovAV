@@ -287,6 +287,17 @@
 				echo '<br>';
 		}
 	//task 52
+		$str = 'ab-cd-ef';
+		echo strchr($str, '-cd-ef');
+	//task 53
+		$str = 'ab-cd-ef';
+		echo strrchr($str, '-ef');
+	//task 54
+		$str = 'ab--cd--ef';
+		echo strstr($str, '--cd--ef');
+
+
+
 		
 		
 ?>
