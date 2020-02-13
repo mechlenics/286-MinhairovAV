@@ -1,32 +1,48 @@
 <?php
-class snake {
-	public $map;
+class snake
+{
+	public $line;
 	protected $pos;
 	
-	public function __construct($map,$pos=0){
-		$this->map = $map;
-		$this->pos = $pos;
+	public function __construct($line)
+	{
+		$this->line = $line;
 	}
 
-	public function move($stop){
+	public function move($stop)
+	{
 		$this->pos = strpos($this->map, $stop, $this->pos) + strlen($stop);
 	}
-
 	public function eat($stop){
 		$start = $this -> pos;
 		$this->move($stop);
 		
-		for($i = $start; $i < $this->pos - strlen($stop); $i){
-			$this->map[$i] = '*';
-			$this->map[$i+1] = '>';
-			echo $map;
-
+		for($i = $start; $i < $this->pos - strlen($stop); $i++){
+			$this->line[$i] = "*";
 		}
 	}	
 }
 
-$ex1 = new snake('*y--------i', 9);
-$ex1->move('y');
-$ex1->eat('i');
-echo $ex1->map;
-?>
+$st1 = new snake(">-------------");
+$st1->eat(">");
+
+echo $st1->line;
+echo "<br>";
+
+$st2 = new snake("->------------");
+$st2->eat(">");
+
+echo $st2->line;
+echo "<br>";
+
+$st3 = new snake("---->---------");
+$st3->eat(">");
+
+echo $st3->line;
+echo "<br>";
+
+$st4 = new snake("---------->---");
+$st4->eat(">");
+
+echo $st4->line;
+echo "<br>";
